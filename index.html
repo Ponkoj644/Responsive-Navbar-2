@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Navbar 2</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/boxicons@latest/css/boxicons.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <a href="#" class="logo">Logo</a>
+      <input type="checkbox" id="check" />
+      <label for="check" class="icons">
+        <i class="bx bx-menu-alt-left" id="menu-icon"></i>
+        <i class="bx bx-x" id="close-icon"></i>
+      </label>
+
+      <nav class="navbar" id="navbar">
+        <a href="#" style="--i: 0" data-link>home</a>
+        <a href="#about" style="--i: 1" data-link>about</a>
+        <a href="#gallery" style="--i: 2" data-link>gallery</a>
+        <a href="#service" style="--i: 3" data-link>service</a>
+        <a href="#contact" style="--i: 4" data-link>contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="home" id="home">
+        <div class="overlay"></div>
+        <h1>HOME</h1>
+      </section>
+      <section class="about" id="about">
+        <div class="overlay"></div>
+
+        <h1>About</h1>
+      </section>
+      <section class="gallery" id="gallery">
+        <div class="overlay"></div>
+
+        <h1>Gallery</h1>
+      </section>
+      <section class="service" id="service">
+        <div class="overlay"></div>
+
+        <h1>Service</h1>
+      </section>
+
+      <section class="contact" id="contact">
+        <div class="overlay"></div>
+
+        <h1>Contact</h1>
+      </section>
+    </main>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const navbar = document.getElementById("navbar");
+        const navLinks = navbar.querySelectorAll("[data-link]");
+        const check = document.getElementById("check");
+
+        navLinks.forEach((link) => {
+          link.addEventListener("click", () => {
+            check.checked = false;
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
